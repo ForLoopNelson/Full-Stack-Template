@@ -3,7 +3,7 @@ const app = express()
 const cors = require("cors")
 const MongoClient = require("mongodb").MongoClient
 require("dotenv").config()
-const PORT = 8000
+//PORT in env file
 
 let db,
   dbConnectionString = process.env.DB_KEY,
@@ -11,7 +11,7 @@ let db,
   collection
 
 MongoClient.connect(dbConnectionString).then((client) => {
-  console.log(`Connected to ${dbName}.`)
+  console.log(`Connected to ${dbName} database.`)
   db = client.db(dbName)
   collection = db.collection("movies")
 })
@@ -32,5 +32,5 @@ app.get("/", async (req, res) => {
 
 //PORT Listen 8000
 app.listen(process.env.PORT || PORT, () => {
-  console.log(`Server is running on ${PORT}`)
+  console.log(`Server is running`)
 })
