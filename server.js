@@ -30,7 +30,7 @@ app.get("/", async (req, res) => {
   }
 })
 
-//PORT Listen 8000
+//PORT Listen
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server is running`)
 })
